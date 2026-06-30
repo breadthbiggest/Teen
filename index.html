@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<!-- ════════════════════════════════════════
+     EDIT: Page title & tab name
+════════════════════════════════════════ -->
+<title>Secret Folders — Exclusive Content</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style> 
+/* ══════════════════════════════════════════════════════════
+   ROOT — WINE RED LUXURY PALETTE
+══════════════════════════════════════════════════════════ */
+:root{
+  --bg:#06030a;
+  --surface:#110810;
+  --card:#1a0d18;
+  --card-hover:#221020;
+  --border:#3d1a30;
+  --border-light:#5a2540;
+  --wine:#8b1a35;
+  --wine-bright:#c41e3a;
+  --wine-deep:#5c0e20;
+  --gold:#c9a84c;
+  --gold-light:#e8c86a;
+  --cream:#f5ede8;
+  --text:#f0e8ec;
+  --muted:#9a7585;
+  --muted2:#6a4d5c;
+  --green:#2ecc71;
+  --radius:14px;
+  --shadow:0 8px 40px rgba(0,0,0,0.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Jost',sans-serif;min-height:100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 20%,rgba(139,26,53,0.08) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 80%,rgba(92,14,32,0.06) 0%,transparent 50%);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--wine);border-radius:3px}
+
+/* ══════════════════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════════════════ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(6,3,10,0.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 1.5rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-badge{
+  width:36px;height:36px;border-radius:8px;
+  background:linear-gradient(135deg,var(--wine-bright),var(--wine-deep));
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;font-weight:800;color:#fff;letter-spacing:0.5px;
+}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;
+  color:var(--text);letter-spacing:0.5px}
+.logo-text span{color:var(--wine-bright)}
+.logo-sub{font-size:0.55rem;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted);display:block;margin-top:-2px}
+.header-right{display:flex;align-items:center;gap:0.75rem}
+
+/* ── EDIT: Support button link is in the HTML below ── */
+.btn-support{
+  padding:0.5rem 1.1rem;border-radius:50px;
+  border:1px solid var(--border-light);color:var(--muted);
+  font-size:0.78rem;font-weight:600;cursor:pointer;background:transparent;
+  transition:all 0.2s;text-decoration:none;
+}
+.btn-support:hover{border-color:var(--wine-bright);color:var(--wine-bright)}
+
+/* ══════════════════════════════════════════════════════════
+   HERO BANNER
+══════════════════════════════════════════════════════════ */
+.hero{
+  text-align:center;padding:3.5rem 1.5rem 2.5rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(196,30,58,0.12) 0%,transparent 65%);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:0.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
+  padding:5px 14px;border-radius:50px;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:700;line-height:1.15;margin-bottom:0.75rem;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--wine-bright),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{color:var(--muted);font-size:0.9rem;max-width:520px;margin:0 auto 1.5rem;line-height:1.6}
+.hero-stats{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.hero-stat{display:flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--muted)}
+.hero-stat strong{color:var(--text);font-weight:600}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+  animation:pulse 1.5s infinite;display:inline-block}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,204,113,0.4)}50%{box-shadow:0 0 0 5px rgba(46,204,113,0)}}
+
+/* ══════════════════════════════════════════════════════════
+   CATALOG SECTION
+══════════════════════════════════════════════════════════ */
+.catalog-section{padding:2.5rem 1.5rem}
+.catalog-header{margin-bottom:1.75rem}
+.catalog-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700}
+.catalog-title span{color:var(--wine-bright)}
+.catalog-sub{color:var(--muted);font-size:0.85rem;margin-top:4px}
+
+.catalog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.25rem;
+}
+
+/* PRODUCT CARD */
+.product-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;transition:all 0.25s;cursor:pointer;position:relative;
+}
+.product-card:hover{
+  transform:translateY(-4px);border-color:var(--border-light);
+  box-shadow:0 12px 50px rgba(196,30,58,0.15);
+}
+.card-badge{
+  position:absolute;top:10px;left:10px;z-index:2;
+  font-size:0.62rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 10px;border-radius:50px;
+}
+.badge-featured{background:linear-gradient(135deg,var(--wine-bright),var(--wine-deep));color:#fff}
+.badge-hot{background:linear-gradient(135deg,#ff6b35,#c41e3a);color:#fff}
+.badge-new{background:linear-gradient(135deg,var(--gold),#a07030);color:#000}
+
+.card-img{
+  width:100%;height:200px;object-fit:cover;display:block;
+  background:var(--surface);transition:transform 0.4s;
+}
+.product-card:hover .card-img{transform:scale(1.03)}
+
+/* Placeholder when no image */
+.card-img-placeholder{
+  width:100%;height:200px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1e0a18,#2d1025);
+  font-size:0.75rem;color:var(--muted2);letter-spacing:1px;text-transform:uppercase;
+  flex-direction:column;gap:8px;
+}
+.card-img-placeholder svg{opacity:0.3}
+
+.card-body{padding:1.1rem}
+.card-name{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;
+  margin-bottom:3px;line-height:1.3;color:var(--text);
+}
+.card-desc{font-size:0.78rem;color:var(--muted);margin-bottom:0.9rem;
+  line-height:1.5;min-height:2.3rem}
+
+.card-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:0.9rem;
+}
+.card-purchases{font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.card-purchases svg{color:var(--muted2)}
+.card-price{display:flex;align-items:baseline;gap:6px}
+.price-old{font-size:0.78rem;color:var(--muted2);text-decoration:line-through}
+.price-now{
+  font-size:1.15rem;font-weight:700;
+  background:linear-gradient(135deg,var(--wine-bright),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.price-currency{font-size:0.7rem;color:var(--muted);font-weight:600;margin-right:-3px}
+
+.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+.btn-buy{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:0.6rem;border-radius:50px;
+  background:linear-gradient(135deg,var(--wine-bright),var(--wine-deep));
+  color:#fff;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;
+  font-family:'Jost',sans-serif;transition:all 0.2s;
+  box-shadow:0 4px 15px rgba(196,30,58,0.3);
+}
+.btn-buy:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(196,30,58,0.45)}
+.btn-proof{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:0.6rem;border-radius:50px;
+  border:1px solid var(--border-light);color:var(--muted);
+  font-size:0.8rem;font-weight:500;cursor:pointer;background:transparent;
+  font-family:'Jost',sans-serif;transition:all 0.2s;text-decoration:none;
+}
+.btn-proof:hover{border-color:var(--muted);color:var(--text)}
+
+/* ══════════════════════════════════════════════════════════
+   PRODUCT DETAIL MODAL
+══════════════════════════════════════════════════════════ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(3,1,6,0.85);backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;
+  padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.3s;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+
+.detail-modal{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  width:100%;max-width:520px;max-height:90vh;overflow-y:auto;
+  position:relative;transform:translateY(20px) scale(0.97);
+  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.modal-overlay.open .detail-modal{transform:translateY(0) scale(1)}
+
+.detail-header{
+  background:linear-gradient(135deg,rgba(196,30,58,0.12),rgba(92,14,32,0.08));
+  border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;
+}
+.detail-top-meta{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0.75rem;
+}
+.meta-tag{
+  font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 10px;border-radius:50px;
+}
+.meta-tag.red{background:rgba(196,30,58,0.15);color:var(--wine-bright);border:1px solid rgba(196,30,58,0.2)}
+.meta-tag.gold{background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.2)}
+.meta-tag.green{background:rgba(46,204,113,0.1);color:var(--green);border:1px solid rgba(46,204,113,0.2)}
+
+.detail-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;line-height:1.2}
+.detail-urgency{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:8px;margin-top:0.85rem;
+}
+.urgency-timer{display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--muted)}
+.urgency-timer strong{color:var(--wine-bright);font-variant-numeric:tabular-nums}
+.urgency-spots{
+  display:flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;
+  color:var(--gold);background:rgba(201,168,76,0.08);
+  border:1px solid rgba(201,168,76,0.2);padding:4px 10px;border-radius:50px;
+}
+
+.detail-img-wrap{position:relative;overflow:hidden}
+.detail-img{width:100%;height:280px;object-fit:cover;display:block;
+  filter:blur(14px) brightness(0.4);transform:scale(1.08)}
+.detail-img-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;
+}
+.lock-icon-large{font-size:2.5rem;filter:drop-shadow(0 0 15px rgba(196,30,58,0.6))}
+.img-lock-label{font-size:0.8rem;color:rgba(255,255,255,0.55);letter-spacing:1px}
+
+.detail-body{padding:1.5rem}
+.detail-includes{margin-bottom:1.25rem}
+.include-item{
+  display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.85rem;color:var(--cream);
+}
+.include-item:last-child{border-bottom:none}
+.check-icon{color:var(--green);flex-shrink:0;margin-top:2px;font-size:1rem}
+
+.detail-price-row{
+  display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;flex-wrap:wrap;
+}
+.detail-price-old{font-size:1rem;color:var(--muted2);text-decoration:line-through}
+.detail-price-now{
+  font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;
+  background:linear-gradient(135deg,var(--wine-bright),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.save-badge{
+  background:rgba(46,204,113,0.12);color:var(--green);
+  border:1px solid rgba(46,204,113,0.2);
+  font-size:0.72rem;font-weight:700;padding:4px 10px;border-radius:50px;
+}
+
+.btn-buy-large{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:1.05rem;border-radius:50px;
+  background:linear-gradient(135deg,var(--wine-bright),var(--wine-deep));
+  color:#fff;font-size:1rem;font-weight:700;cursor:pointer;border:none;
+  font-family:'Jost',sans-serif;
+  box-shadow:0 6px 30px rgba(196,30,58,0.4);
+  transition:all 0.2s;margin-bottom:0.6rem;
+  position:relative;overflow:hidden;
+}
+.btn-buy-large::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent);border-radius:50px}
+.btn-buy-large:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(196,30,58,0.55)}
+
+.btn-proof-large{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:0.85rem;border-radius:50px;
+  border:1px solid var(--border-light);color:var(--muted);
+  font-size:0.85rem;font-weight:500;cursor:pointer;background:transparent;
+  font-family:'Jost',sans-serif;transition:all 0.2s;text-decoration:none;
+}
+.btn-proof-large:hover{border-color:var(--muted);color:var(--text)}
+
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--muted);font-size:0.85rem;
+  transition:all 0.2s;z-index:10;
+}
+.modal-close:hover{background:var(--wine-deep);color:#fff;border-color:var(--wine)}
+
+/* ══════════════════════════════════════════════════════════
+   CHECKOUT MODAL — PREMIUM DARK
+══════════════════════════════════════════════════════════ */
+.checkout-modal{
+  background:linear-gradient(160deg,#130a18 0%,#0d0612 100%);
+  border:1px solid var(--border-light);
+  border-radius:24px;
+  width:100%;max-width:500px;max-height:92vh;overflow-y:auto;
+  transform:translateY(20px) scale(0.97);
+  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  color:var(--text);
+  box-shadow:0 30px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.modal-overlay.open .checkout-modal{transform:translateY(0) scale(1)}
+
+.checkout-head{
+  padding:1.75rem 1.75rem 1.25rem;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:relative;
+  background:linear-gradient(135deg,rgba(196,30,58,0.08),transparent);
+}
+.checkout-head-top{display:flex;align-items:center;gap:12px;margin-bottom:0.5rem}
+.checkout-lock-icon{
+  width:42px;height:42px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(196,30,58,0.2),rgba(92,14,32,0.3));
+  border:1px solid rgba(196,30,58,0.25);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.checkout-head h2{
+  font-family:'Cormorant Garamond',serif;font-size:1.55rem;
+  font-weight:700;color:var(--text);letter-spacing:0.3px;
+}
+.checkout-product-name{
+  font-size:0.78rem;color:var(--muted);margin-top:2px;
+  padding-left:54px;
+}
+.checkout-close{
+  position:absolute;top:1.4rem;right:1.4rem;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,0.05);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:0.8rem;color:var(--muted);transition:all 0.2s;z-index:10;
+}
+.checkout-close:hover{background:rgba(196,30,58,0.15);color:#fff;border-color:var(--wine)}
+
+.checkout-body{padding:1.5rem 1.75rem 1.75rem}
+
+/* SECTION LABEL */
+.checkout-section-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:0.62rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.checkout-section-label::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(201,168,76,0.3),transparent);
+}
+
+/* CRYPTO ITEMS */
+.crypto-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;
+  margin-bottom:0.6rem;gap:0.75rem;
+  transition:all 0.2s;cursor:default;
+  position:relative;overflow:hidden;
+}
+.crypto-item::before{
+  content:'';position:absolute;inset:0;opacity:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.03),transparent);
+  transition:opacity 0.2s;
+}
+.crypto-item:hover{border-color:rgba(255,255,255,0.14);transform:translateX(3px)}
+.crypto-item:hover::before{opacity:1}
+
+.crypto-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.crypto-icon{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  position:relative;
+}
+.crypto-icon.btc{background:radial-gradient(circle,#2d1f00,#1a1100);border:1.5px solid rgba(247,147,26,0.35);box-shadow:0 0 16px rgba(247,147,26,0.12)}
+.crypto-icon.eth{background:radial-gradient(circle,#151530,#0d0d22);border:1.5px solid rgba(98,126,234,0.35);box-shadow:0 0 16px rgba(98,126,234,0.12)}
+.crypto-icon.usdt{background:radial-gradient(circle,#0a2018,#061510);border:1.5px solid rgba(38,161,123,0.35);box-shadow:0 0 16px rgba(38,161,123,0.12)}
+.crypto-icon.sol{background:radial-gradient(circle,#1a0d2e,#100820);border:1.5px solid rgba(153,69,255,0.35);box-shadow:0 0 16px rgba(153,69,255,0.12)}
+
+.crypto-info{flex:1;min-width:0}
+.crypto-name{
+  font-size:0.88rem;font-weight:600;color:var(--text);
+  display:block;margin-bottom:3px;
+}
+.crypto-addr{
+  font-size:0.68rem;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  max-width:220px;display:block;font-family:monospace;letter-spacing:0.3px;
+}
+
+/* COPY TOAST */
+@keyframes toastIn{from{opacity:0;transform:translateY(20px) scale(0.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes toastOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(-12px) scale(0.95)}}
+@keyframes ripple{0%{transform:scale(0);opacity:0.6}100%{transform:scale(2.5);opacity:0}}
+#copy-toast{
+  position:fixed;bottom:32px;left:50%;transform:translateX(-50%);
+  z-index:9999;pointer-events:none;
+  background:linear-gradient(135deg,rgba(46,204,113,0.18),rgba(46,204,113,0.08));
+  border:1px solid rgba(46,204,113,0.4);
+  border-radius:50px;padding:0.65rem 1.4rem;
+  display:flex;align-items:center;gap:9px;
+  font-size:0.82rem;font-weight:700;color:#2ecc71;
+  box-shadow:0 8px 40px rgba(46,204,113,0.2),0 0 0 1px rgba(46,204,113,0.1);
+  opacity:0;
+  backdrop-filter:blur(12px);
+  font-family:'Jost',sans-serif;letter-spacing:0.3px;
+}
+#copy-toast.show{animation:toastIn 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards}
+#copy-toast.hide{animation:toastOut 0.3s ease forwards}
+
+.btn-copy{
+  display:flex;align-items:center;gap:5px;
+  padding:0.45rem 0.9rem;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:50px;
+  font-size:0.72rem;font-weight:700;color:var(--muted);
+  cursor:pointer;transition:all 0.2s;white-space:nowrap;flex-shrink:0;
+  font-family:'Jost',sans-serif;letter-spacing:0.3px;
+  position:relative;overflow:hidden;
+}
+.btn-copy:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--text)}
+.btn-copy.copied{
+  background:rgba(46,204,113,0.14);
+  border-color:rgba(46,204,113,0.4);
+  color:var(--green);
+  transform:scale(1.05);
+}
+.btn-copy .ripple-effect{
+  position:absolute;border-radius:50%;
+  width:100%;padding-top:100%;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:rgba(46,204,113,0.3);
+  animation:ripple 0.5s ease-out forwards;
+}
+.crypto-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+/* DIVIDER */
+.divider{
+  display:flex;align-items:center;gap:10px;
+  font-size:0.65rem;color:var(--muted2);letter-spacing:2px;
+  text-transform:uppercase;margin:1.25rem 0;
+}
+.divider::before,.divider::after{
+  content:'';flex:1;height:1px;background:rgba(255,255,255,0.07)
+}
+
+/* CARD / PAYPAL BUTTONS */
+.btn-card-pay,.btn-paypal-pay{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:0.9rem;border-radius:14px;
+  font-size:0.88rem;font-weight:600;cursor:pointer;
+  font-family:'Jost',sans-serif;transition:all 0.2s;text-decoration:none;
+  margin-bottom:0.6rem;letter-spacing:0.3px;
+}
+.btn-card-pay{
+  background:linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05));
+  color:var(--text);border:1px solid rgba(255,255,255,0.12);
+}
+.btn-card-pay:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2)}
+
+.btn-paypal-pay{
+  background:linear-gradient(135deg,#002f8a,#001f5e);
+  color:#fff;border:1px solid rgba(0,48,135,0.6);
+  box-shadow:0 4px 20px rgba(0,48,135,0.25);
+}
+.btn-paypal-pay:hover{box-shadow:0 6px 28px rgba(0,48,135,0.4);transform:translateY(-1px)}
+
+/* AFTER PAYMENT */
+.after-payment-label{
+  font-size:0.6rem;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted2);
+  text-align:center;margin:1.25rem 0 0.85rem;
+  display:flex;align-items:center;gap:8px;
+}
+.after-payment-label::before,.after-payment-label::after{
+  content:'';flex:1;height:1px;background:rgba(255,255,255,0.06)
+}
+
+.btn-send-proof{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;padding:0.9rem;border-radius:14px;
+  background:linear-gradient(135deg,rgba(36,161,222,0.12),rgba(36,161,222,0.06));
+  border:1px solid rgba(36,161,222,0.25);
+  color:#39b0e0;
+  font-size:0.88rem;font-weight:700;
+  cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;
+  text-decoration:none;letter-spacing:0.3px;
+}
+.btn-send-proof:hover{
+  background:linear-gradient(135deg,rgba(36,161,222,0.2),rgba(36,161,222,0.1));
+  border-color:rgba(36,161,222,0.45);
+  box-shadow:0 4px 20px rgba(36,161,222,0.15);
+  transform:translateY(-1px);
+}
+
+.checkout-note{
+  margin-top:1rem;padding:0.85rem 1rem;border-radius:12px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  font-size:0.75rem;color:var(--muted);
+  display:flex;gap:8px;line-height:1.6;
+}
+.checkout-note-icon{flex-shrink:0;font-size:0.9rem}
+
+/* ══════════════════════════════════════════════════════════
+   PURCHASE NOTIFICATION POPUP
+══════════════════════════════════════════════════════════ */
+#notif-popup{
+  position:fixed;top:80px;right:16px;z-index:999;
+  background:#fff;border:1px solid #f0f0f0;border-radius:14px;
+  padding:0.85rem 1rem;display:flex;align-items:center;gap:0.75rem;
+  box-shadow:0 8px 40px rgba(0,0,0,0.18);
+  width:280px;
+  transform:translateX(320px);opacity:0;
+  transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events:none;
+}
+#notif-popup.show{transform:translateX(0);opacity:1}
+.notif-avatar{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:0.85rem;color:#fff;
+}
+.notif-content{flex:1;min-width:0}
+.notif-name{font-size:0.82rem;font-weight:700;color:#111}
+.notif-action{font-size:0.72rem;color:#888;margin-top:1px}
+.notif-product{color:#111;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;display:inline-block}
+.notif-price{
+  font-size:0.82rem;font-weight:800;
+  color:var(--wine-bright);white-space:nowrap;
+}
+.notif-dot-green{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════ */
+footer{
+  border-top:1px solid var(--border);padding:2rem 1.5rem;
+  text-align:center;color:var(--muted2);font-size:0.78rem;
+  background:var(--surface);
+}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--wine-bright)}
+
+/* ══════════════════════════════════════════════════════════
+   ALL CONTENT BUNDLE CARD
+══════════════════════════════════════════════════════════ */
+.bundle-section{
+  padding:2.5rem 1.5rem 0;
+}
+.bundle-card{
+  position:relative;overflow:hidden;
+  border-radius:24px;
+  border:1px solid rgba(201,168,76,0.35);
+  background: 
+    linear-gradient(135deg, rgba(22,11,34,0.88), rgba(31,13,26,0.92)),
+    url('images/produ.png') center/cover no-repeat;
+  padding:2.75rem 2.5rem;
+  text-align:center;
+  box-shadow:0 0 0 1px rgba(201,168,76,0.1), 0 20px 80px rgba(196,30,58,0.2), 0 0 120px rgba(139,26,53,0.08);
+  cursor:pointer;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.bundle-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 0 1px rgba(201,168,76,0.25), 0 28px 100px rgba(196,30,58,0.3), 0 0 160px rgba(139,26,53,0.12);
+}
+/* Shimmer lines */
+.bundle-card::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 0%,rgba(201,168,76,0.12) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(196,30,58,0.15) 0%,transparent 55%);
+  pointer-events:none;
+}
+.bundle-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,0.6),transparent);
+}
+.bundle-crown{
+  font-size:2.5rem;margin-bottom:0.5rem;
+  filter:drop-shadow(0 0 20px rgba(201,168,76,0.5));
+  display:block;animation:float 3s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.bundle-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:0.65rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);background:rgba(201,168,76,0.08);
+  border:1px solid rgba(201,168,76,0.25);padding:4px 16px;border-radius:50px;
+  margin-bottom:1.1rem;
+}
+.bundle-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,7vw,4.2rem);
+  font-weight:700;line-height:1.05;
+  margin-bottom:0.4rem;letter-spacing:-0.5px;
+}
+.bundle-title .bundle-all{
+  display:block;color:var(--cream);
+}
+.bundle-title .bundle-price{
+  display:block;
+  background:linear-gradient(135deg,var(--gold-light) 0%,var(--wine-bright) 60%,var(--gold) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 2px 12px rgba(201,168,76,0.25));
+}
+.bundle-sub{
+  font-size:0.9rem;color:var(--muted);max-width:480px;margin:0.6rem auto 1.75rem;line-height:1.6;
+}
+.bundle-perks{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-bottom:1.75rem;
+}
+.bundle-perk{
+  display:flex;align-items:center;gap:6px;
+  font-size:0.78rem;font-weight:600;color:var(--cream);
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  padding:6px 14px;border-radius:50px;
+}
+.bundle-perk-icon{font-size:0.9rem}
+.bundle-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:1rem 3rem;border-radius:50px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold),#a07030);
+  color:#0d0610;font-size:1rem;font-weight:800;
+  font-family:'Jost',sans-serif;letter-spacing:0.5px;
+  border:none;cursor:pointer;
+  box-shadow:0 6px 30px rgba(201,168,76,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition:all 0.25s;position:relative;
+}
+.bundle-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 50px rgba(201,168,76,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.bundle-corner{
+  position:absolute;top:16px;right:16px;
+  background:linear-gradient(135deg,var(--wine-bright),var(--wine-deep));
+  color:#fff;font-size:0.62rem;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;padding:5px 12px;border-radius:50px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PREMIUM CRYPTO ICONS
+══════════════════════════════════════════════════════════ */
+.crypto-icon-inner{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;font-weight:800;border-radius:50%;
+}
+.crypto-icon.btc .crypto-icon-inner{color:#f7931a}
+.crypto-icon.eth .crypto-icon-inner{color:#627eea}
+.crypto-icon.usdt .crypto-icon-inner{color:#26a17b}
+.crypto-icon.sol .crypto-icon-inner{color:#9945ff}
+.crypto-icon.bnb .crypto-icon-inner{color:#f3ba2f}
+.crypto-icon.ltc .crypto-icon-inner{color:#bfbbbb}
+
+/* ══════════════════════════════════════════════════════════
+   UTILITY
+══════════════════════════════════════════════════════════ */
+.max-w{max-width:1200px;margin:0 auto}
+     .bundle-value-row{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  margin:0 auto 1.5rem;max-width:420px;
+  border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.07);
+}
+.bundle-val-block{
+  flex:1;padding:0.85rem 1rem;text-align:center;
+}
+.bundle-val-block.original{
+  background:rgba(255,255,255,0.03);
+  border-right:1px solid rgba(255,255,255,0.07);
+}
+.bundle-val-block.bundle{
+  background:rgba(201,168,76,0.07);
+}
+.bundle-val-label{
+  font-size:0.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);margin-bottom:4px;
+}
+.bundle-val-block.bundle .bundle-val-label{
+  color:rgba(201,168,76,0.8);
+}
+.bundle-val-amount{
+  font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;line-height:1;
+}
+.bundle-val-block.original .bundle-val-amount{
+  color:rgba(255,255,255,0.35);
+  text-decoration:line-through;
+  text-decoration-color:rgba(196,30,58,0.6);
+}
+.bundle-val-block.bundle .bundle-val-amount{
+  background:linear-gradient(135deg,#e8c96a,#c9a84c);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.bundle-val-sep{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,#c41e3a,#8b1a35);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;font-weight:900;color:#fff;
+  flex-shrink:0;z-index:1;position:relative;
+  box-shadow:0 4px 16px rgba(196,30,58,0.35);
+  margin:0 -1px;
+}
+.bundle-saving-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(46,204,113,0.1);
+  border:1px solid rgba(46,204,113,0.3);
+  border-radius:50px;padding:5px 16px;
+  font-size:0.72rem;font-weight:800;color:#2ecc71;
+  letter-spacing:0.5px;margin-bottom:1.5rem;
+}
+.bundle-saving-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#2ecc71;
+  box-shadow:0 0 8px rgba(46,204,113,0.6);
+  animation:pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(0.7)}
+}
+</style>
+</head>
+<body>
+
+<div id="copy-toast">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="copy-toast-text">Address copied!</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     PURCHASE NOTIFICATION POPUP
+     (auto-cycles through product names + buyer initials)
+════════════════════════════════════════════════════════ -->
+<div id="notif-popup">
+  <div class="notif-avatar" id="notif-avatar">JD</div>
+  <div class="notif-content">
+    <div class="notif-name" id="notif-buyer-name">Jack D.</div>
+    <div class="notif-action">just purchased <span class="notif-product" id="notif-product-name">…</span></div>
+  </div>
+  <div class="notif-price" id="notif-price">$40</div>
+  <div class="notif-dot-green"></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════ -->
+<header>
+  <a class="logo" href="#">
+    <!-- EDIT ▼ Brand badge text (2 chars) -->
+    <div class="logo-badge">18+</div>
+    <div>
+      <!-- EDIT ▼ Brand name -->
+      <div class="logo-text">SECRET <span>FOLDERS</span></div>
+      <!-- EDIT ▼ Brand tagline -->
+      <span class="logo-sub">Exclusive Content</span>
+    </div>
+  </a>
+  <div class="header-right">
+    <!-- EDIT ▼ Support link (Telegram, WhatsApp, email, etc.) -->
+    <a class="btn-support" href="https://t.me/makarov6v" target="_blank">Support</a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="max-w">
+    <!-- EDIT ▼ Eyebrow label -->
+    <div class="hero-eyebrow">⭐ Secret Content Catalog</div>
+    <!-- EDIT ▼ Main headline -->
+    <h1>Secret <span>Premium</span> Content<br/>You Won't Find Elsewhere</h1>
+    <!-- EDIT ▼ Subheadline -->
+    <p class="hero-sub">Every folder is handpicked, exclusive, and delivered instantly. Your privacy is guaranteed,no questions asked.100% confidential </p>
+    <div class="hero-stats">
+      <!-- EDIT ▼ Update these stats -->
+      <div class="hero-stat"><span class="pulse-dot"></span> <strong>88</strong> buying now</div>
+      <div class="hero-stat">👥 <strong>1,240+</strong> sold</div>
+      <div class="hero-stat">⚡ <strong>Instant</strong> delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     ALL CONTENT BUNDLE
+════════════════════════════════════════════════════════ -->
+<section class="bundle-section max-w">
+  <div class="bundle-card" onclick="openBundleCheckout()">
+    <div class="bundle-corner">⭐ BEST VALUE</div>
+    <span class="bundle-crown">👑</span>
+    <div class="bundle-eyebrow">✦ Limited Offer ✦</div>
+    <div class="bundle-title">
+      <span class="bundle-all">ALL CONTENT🔥</span>
+      <span class="bundle-price">$150</span>
+    </div>
+    <p class="bundle-sub">Get every single folder in our catalog — all products, all group VIP accesses, all bonuses. One payment, lifetime unlock.</p>
+    <div class="bundle-perks">
+      <div class="bundle-perk"><span class="bundle-perk-icon">📁</span> Every Product Included</div>
+      <div class="bundle-perk"><span class="bundle-perk-icon">⚡</span> Instant Delivery</div>
+      <div class="bundle-perk"><span class="bundle-perk-icon">♾️</span> Lifetime Access</div>
+      <div class="bundle-perk"><span class="bundle-perk-icon">🎁</span> All Bonuses Unlocked</div>
+      <div class="bundle-perk"><span class="bundle-perk-icon">🔒</span> VIP Access</div>
+    </div>
+    <div class="bundle-value-row">
+      <div class="bundle-val-block original">
+        <div class="bundle-val-label">If bought separately</div>
+        <div class="bundle-val-amount" id="bundle-total-separately">—</div>
+      </div>
+      <div class="bundle-val-sep">VS</div>
+      <div class="bundle-val-block bundle">
+        <div class="bundle-val-label">Bundle Price</div>
+        <div class="bundle-val-amount">$150</div>
+      </div>
+    </div>
+    <div class="bundle-saving-badge">
+      <span class="bundle-saving-dot"></span>
+      <span id="bundle-saving-text">Loading…</span>
+    </div>
+    <button class="bundle-btn">🛒 GET EVERYTHING FOR ONLY $150</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PRODUCT CATALOG
+════════════════════════════════════════════════════════ -->
+<section class="catalog-section max-w">
+  <div class="catalog-header">
+    <!-- EDIT ▼ Section title -->
+    <h2 class="catalog-title">Exclusive <span>Folders</span></h2>
+    <p class="catalog-sub">Tap any product to watch the preview and purchase it</p>
+  </div>
+  <div class="catalog-grid" id="catalog-grid">
+    <!-- Products injected by JavaScript below -->
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer>
+  <!-- EDIT ▼ Footer text -->
+  <p>© 2026 Secret Folders · All content is for adults 18+ only</p>
+  <p style="margin-top:6px">
+    <!-- EDIT ▼ Footer links -->
+    <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Privacy</a> &nbsp;·&nbsp;
+    <a href="t.me/makarov6v">Support</a>
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════
+     DETAIL MODAL (Product page)
+════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="detail-overlay">
+  <div class="detail-modal">
+    <div class="modal-close" onclick="closeDetailModal()">✕</div>
+
+    <div class="detail-header">
+      <div class="detail-top-meta" id="dm-meta"></div>
+      <h2 class="detail-name" id="dm-name"></h2>
+      <div class="detail-urgency">
+        <div class="urgency-timer" id="dm-timer-wrap">
+          ⏱ <span id="dm-timer">08:28</span> left
+        </div>
+        <div class="urgency-spots" id="dm-spots"></div>
+      </div>
+    </div>
+
+    <div class="detail-img-wrap">
+      <img class="detail-img" id="dm-img" src="" alt="preview"/>
+      <div class="detail-img-overlay">
+        <div class="lock-icon-large">🔒</div>
+        <div class="img-lock-label">Purchase to unlock full content</div>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-includes" id="dm-includes"></div>
+
+      <div class="detail-price-row">
+        <span class="detail-price-old" id="dm-old-price"></span>
+        <span class="detail-price-now" id="dm-price"></span>
+        <span class="save-badge" id="dm-save"></span>
+      </div>
+
+      <button class="btn-buy-large" onclick="openCheckout()">
+        🛒 PAY <span id="dm-pay-label"></span> — BUY NOW
+      </button>
+      <!-- EDIT ▼ Send Proof link (Telegram etc.) set via JS -->
+      <a class="btn-proof-large" id="dm-proof-btn" href="#" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+        SUPPORT / SEND PROOF
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     CHECKOUT MODAL
+════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="checkout-overlay">
+  <div class="checkout-modal">
+    <div class="checkout-head">
+      <button class="checkout-close" onclick="closeCheckout()">✕</button>
+      <h2>Complete Purchase</h2>
+      <div class="checkout-product-name" id="co-product-name"></div>
+    </div>
+    <div class="checkout-body">
+
+      <!-- CRYPTO SECTION -->
+      <div class="checkout-section-label">Pay with Cryptocurrency</div>
+
+      <!-- ── EDIT each wallet address below ─────────────────── -->
+
+      <!-- BTC -->
+      <div class="crypto-item">
+        <div class="crypto-left">
+          <div class="crypto-icon btc">
+            <div class="crypto-icon-inner">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#f7931a" opacity="0.15"/>
+                <path d="M22.2 14.1c.3-2-1.2-3-3.3-3.7l.7-2.7-1.7-.4-.7 2.7-1.3-.3.7-2.7-1.7-.4-.7 2.7-1-.2-2.4-.6-.4 1.8s1.2.3 1.2.3c.7.2.8.6.8 1l-1.9 7.7c-.1.3-.4.7-1 .5 0 0-1.2-.3-1.2-.3l-.8 2 2.3.6 1 .3-.7 2.7 1.7.4.7-2.7 1.3.3-.7 2.7 1.7.4.7-2.7c2.8.5 4.9.3 5.8-2.2.7-2-.03-3.2-1.5-3.9.9-.4 1.6-1.1 1.7-2.5zm-3 4.2c-.5 2-3.9 1-5 .7l.9-3.5c1.1.3 4.6.8 4.1 2.8zm.5-4.2c-.5 1.8-3.3 1-4.2.7l.8-3.2c.9.2 3.8.7 3.4 2.5z" fill="#f7931a"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="crypto-name">Bitcoin (BTC)</span>
+            <!-- EDIT ▼ Your BTC wallet address -->
+            <span class="crypto-addr" id="addr-btc">1JdxZTBTQoQtGoh7SKaWTXfEopkK6d8E8u</span>
+          </div>
+        </div>
+        <button class="btn-copy" onclick="copyAddr('addr-btc',this)">📋 Copy</button>
+      </div>
+
+      <!-- ETH -->
+      <div class="crypto-item">
+        <div class="crypto-left">
+          <div class="crypto-icon eth">
+            <div class="crypto-icon-inner">
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#627eea" opacity="0.15"/>
+                <path d="M16 5L9 16.5L16 20.5L23 16.5L16 5Z" fill="#627eea" opacity="0.8"/>
+                <path d="M9 16.5L16 27L23 16.5L16 20.5L9 16.5Z" fill="#627eea"/>
+                <path d="M16 5L9 16.5L16 20.5V5Z" fill="#8ea4f5" opacity="0.6"/>
+                <path d="M16 20.5L23 16.5L16 27V20.5Z" fill="#8ea4f5" opacity="0.6"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="crypto-name">Ethereum (ETH)</span>
+            <!-- EDIT ▼ Your ETH wallet address -->
+            <span class="crypto-addr" id="addr-eth">0xf2FEE534D5dec960c5192a9dE5aF4E9899b6eDa9</span>
+          </div>
+        </div>
+        <button class="btn-copy" onclick="copyAddr('addr-eth',this)">📋 Copy</button>
+      </div>
+
+      <!-- USDT -->
+      <div class="crypto-item">
+        <div class="crypto-left">
+          <div class="crypto-icon usdt">
+            <div class="crypto-icon-inner">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#26a17b" opacity="0.15"/>
+                <path d="M17.2 17.1v-.01c-.09.01-.55.03-1.2.03-.62 0-1.06-.02-1.21-.03v.01c-2.38-.11-4.16-.55-4.16-1.09s1.78-.98 4.16-1.09v1.73c.15.01.6.04 1.22.04.74 0 1.11-.03 1.19-.04v-1.73c2.37.11 4.15.55 4.15 1.09s-1.78.98-4.15 1.09zm0-2.43v-1.54h3.32V11H11.5v2.14h3.32v1.54c-2.69.13-4.72.7-4.72 1.38 0 .69 2.03 1.25 4.72 1.38v4.93h2.38v-4.93c2.68-.13 4.7-.69 4.7-1.38 0-.68-2.02-1.25-4.7-1.38z" fill="#26a17b"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="crypto-name">USDT (TRC-20)</span>
+            <!-- EDIT ▼ Your USDT TRC-20 wallet address -->
+            <span class="crypto-addr" id="addr-usdt">TTvBKEyT3yg5xeB2ehaUqmYzkVRHoSofzq</span>
+          </div>
+        </div>
+        <button class="btn-copy" onclick="copyAddr('addr-usdt',this)">📋 Copy</button>
+      </div>
+
+      <!-- SOL -->
+      <div class="crypto-item">
+        <div class="crypto-left">
+          <div class="crypto-icon sol">
+            <div class="crypto-icon-inner">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#9945ff" opacity="0.15"/>
+                <path d="M10 21.4h10.6c.2 0 .4-.1.5-.2l1.5-1.7c.3-.3.1-.8-.4-.8H11.6c-.2 0-.4.1-.5.2L9.6 20.6c-.3.3-.1.8.4.8z" fill="url(#solGrad1)"/>
+                <path d="M10 13.3h10.6c.2 0 .4-.1.5-.2l1.5-1.7c.3-.3.1-.8-.4-.8H11.6c-.2 0-.4.1-.5.2L9.6 12.5c-.3.3-.1.8.4.8z" fill="url(#solGrad2)"/>
+                <path d="M22.2 17.2L20.7 19c-.1.1-.3.2-.5.2H9.6c-.5 0-.7-.5-.4-.8l1.5-1.8c.1-.1.3-.2.5-.2h10.6c.5 0 .7.5.4.8z" fill="url(#solGrad3)"/>
+                <defs>
+                  <linearGradient id="solGrad1" x1="9" y1="21" x2="23" y2="21" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/>
+                  </linearGradient>
+                  <linearGradient id="solGrad2" x1="9" y1="13" x2="23" y2="13" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/>
+                  </linearGradient>
+                  <linearGradient id="solGrad3" x1="9" y1="18" x2="23" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="crypto-name">Solana (SOL)</span>
+            <!-- EDIT ▼ Your SOL wallet address -->
+            <span class="crypto-addr" id="addr-sol">EjpmitcGcmqq6fSN2GstRE4mdQ6MvRmQdy7zjHaPG7Hr</span>
+          </div>
+        </div>
+        <button class="btn-copy" onclick="copyAddr('addr-sol',this)">📋 Copy</button>
+      </div>
+
+      <div class="divider">Or pay with</div>
+      <a class="btn-card-pay" href="https://www.g2a.com/best-deals/binance-gift-cards" target="_blank">
+        🎁 Buy Binance Gift Card (G2A)
+      </a>
+      <!-- <a class="btn-paypal-pay" href="YOUR_PAYPAL_LINK_HERE" target="_blank">
+        🅿️ Pay with PayPal
+      </a> -->
+
+      <!-- AFTER PAYMENT -->
+      <div class="after-payment-label">After Payment</div>
+
+      <!-- EDIT ▼ Replace href with your Telegram/WhatsApp link for proof -->
+      <a class="btn-send-proof" id="checkout-proof-btn" href="" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;color:#c41e3a"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+        Send Proof
+      </a>
+
+      <div class="checkout-note">
+        <span class="checkout-note-icon">ℹ️</span>
+        <!-- EDIT ▼ Instruction text after payment -->
+        After payment, send your proof via Telegram to receive instant access to your product.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     ██████████████████████████████████████████████████████
+     ██                                                  ██
+     ██         ALL PRODUCTS — EDIT HERE ONLY           ██
+     ██                                                  ██
+     ██████████████████████████████████████████████████████
+
+     HOW TO EDIT:
+     - name: Product display name
+     - desc: Short 1-line description shown on the card
+     - image: Full URL of your product thumbnail/preview image
+             (upload to imgbb.com and paste the link)
+     - price: Sale price in USD (number only)
+     - originalPrice: Crossed-out original price (set same as price if no discount)
+     - purchases: How many purchases to display
+     - badge: "featured" | "hot" | "new" | "" (empty = no badge)
+     - spots: Number of spots left (0 = don't show)
+     - includes: Array of bullet points inside the product detail
+     - proofLink: Your Telegram/WhatsApp link for this specific product
+════════════════════════════════════════════════════════ -->
+<script>
+
+const PRODUCTS = [
+  /* ── PRODUCT 1 ─────────────────────────────────────── */
+  {
+    name:         "SNAPGOD FULL EDITION 👻",
+    desc:         "SNAPGOD FULL FOLDER ALL VIDEOS COMPLETE",
+    image:        "images/product-4.png",
+    price:        65,
+    originalPrice:100,
+    purchases:    402,
+    badge:        "hot",
+    spots:        4,
+    includes: [
+      "✅ SNAPGOD FULL EDITION 500GB",
+      "✅ ALL TIERS",
+      "🎁 BONUS: MY EYES ONLY FOLDER SNAPCHAT",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 2 ─────────────────────────────────────── */
+  {
+    name:         "DESIRE G 👻",
+    desc:         "DESIREE ALL VIDEOS FOLDER",
+    image:        "images/dg.png",
+    price:        40,
+    originalPrice:65,
+    purchases:    434,
+    badge:        "",
+    spots:        0,
+    includes: [
+      "✅ FULL FOLDER CONTAINS ALL VIDEOS",
+      "✅ MY EYES ONLY FOLDER",
+      "🎁 BONUS: DESIREE LEAKED SNAP CALLS",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 3 ─────────────────────────────────────── */
+  {
+    name:         "ANXIOUS PANDA 🐼",
+    desc:         "OMEGLE GAMES ANXIOUS PANDA COMPLETE",
+    image:        "images/product-1.png",
+    price:        65,
+    originalPrice:80,
+    purchases:    376,
+    badge:        "new",
+    spots:        6,
+    includes: [
+      "✅ ALL SERIES COMPLETE 80GB",
+      "✅ INCLUDES ALL VIDEOS FULL VERSION 2K QUALITY",
+      "🎁 BONUS: SKYPE FOLDER",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 4 ─────────────────────────────────────── */
+  {
+    name:         "EMMI SELLRS 👻",
+    desc:         "EMMI JOI FOLDER SNAPCHAT",
+    image:        "images/Snap.jpg",
+    price:        60,
+    originalPrice:80,
+    purchases:    398,
+    badge:        "hot",
+    spots:        5,
+    includes: [
+      "✅ CONTAINS ALL FULL VIDEOS 20GB",
+      "✅ ALL NEW JOI VIDEOS",
+      "🎁 BONUS: MY EYES ONLY FOLDER",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 5 ─────────────────────────────────────── */
+  {
+    name:         "PYT TEENS",
+    desc:         "USA PYT TEENS FILES",
+    image:        "images/product-7.png",
+    price:        55,
+    originalPrice:75,
+    purchases:    401,
+    badge:        "new",
+    spots:        8,
+    includes: [
+      "✅ Full PYT CONTENT ",
+      "✅ PYT VIP GROUP INCLUDED",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 6 ─────────────────────────────────────── */
+  {
+    name:         "OMEGLE MONKEY APP 🐒",
+    desc:         "ALL MONKEY APP LEAKS AND FLASH VIDEOS",
+    image:        "images/product-3.png",
+    price:        25,
+    originalPrice:40,
+    purchases:    533,
+    badge:        "",
+    spots:        28,
+    includes: [
+      "✅ FLASH VIDEOS AND LEAKED MONKEY APP ",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 7 ─────────────────────────────────────── */
+  {
+    name:         "LIZZY AND BROTHER",
+    desc:         "LIZZY FULL FOLDER 20GB SNAPGOD",
+    image:        "images/cv.png",
+    price:        45,
+    originalPrice:90,
+    purchases:    289,
+    badge:        "",
+    spots:        0,
+    includes: [
+      "✅ LIZZY COMPLETE FOLDER WITH ALL VIDEOS",
+      "✅ INCEST VIDEOS WITH BROTHER",
+      "🎁 BONUS: SNAPCHAT AND MY EYES ONLY ALL VIDEOS COMPLETE",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 8 ─────────────────────────────────────── */
+  {
+    name:         "AMELIA BLONDE 🔥",
+    desc:         "COMPLETE AMELIA FOLDER",
+    image:        "images/am.png",
+    price:        50,
+    originalPrice:80,
+    purchases:    312,
+    badge:        "hot",
+    spots:        3,
+    includes: [
+      "✅ ALL FULL LEAKED VIDEOS",
+      "✅ COMPLETE FOLDER CONTAINING ALL VIDEOS",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+  /* ── PRODUCT 9 ─────────────────────────────────────── */
+  {
+    name:         "BABY ASHLEE 🌶️",
+    desc:         "BABY ASHLEE FULL FOLDER 50GB",
+    image:        "images/product-2.png",
+    price:        55,
+    originalPrice:95,
+    purchases:    620,
+    badge:        "",
+    spots:        0,
+    includes: [
+      "✅ FULL LEAKED VIDEOS",
+      "✅ MY EYES ONLY NUDES LEAKED",
+      "🎁 BONUS: SNAPCHAT CALLS AND TIKTOK LIVES LEAKS",
+    ],
+    proofLink: "https://t.me/makarov6v",
+  },
+     ];
+/* ════════════════════════════════════════════════════════
+   FAKE BUYER NAMES for the notification popup
+   EDIT: change these to whatever names you want
+════════════════════════════════════════════════════════ */
+const BUYERS = [
+  {name:"James K.",    initials:"JK", color:"#c41e3a"},
+  {name:"Carlos M.",   initials:"CM", color:"#7b2d8b"},
+  {name:"David R.",    initials:"DR", color:"#1a6bc4"},
+  {name:"Marco A.",    initials:"MA", color:"#2e8b57"},
+  {name:"Tyler B.",    initials:"TB", color:"#c47a1e"},
+  {name:"Lucas F.",    initials:"LF", color:"#1e7cc4"},
+  {name:"Nathan G.",   initials:"NG", color:"#8b1a6b"},
+  {name:"Ryan H.",     initials:"RH", color:"#5c6bc4"},
+  {name:"Ethan J.",    initials:"EJ", color:"#c4501e"},
+  {name:"Mason L.",    initials:"ML", color:"#1e8b57"},
+  {name:"Logan N.",    initials:"LN", color:"#6b1a8b"},
+  {name:"Owen P.",     initials:"OP", color:"#1e4ac4"},
+  {name:"Blake Q.",    initials:"BQ", color:"#8b5c1a"},
+  {name:"Connor S.",   initials:"CS", color:"#1a7b5c"},
+  {name:"Dylan T.",    initials:"DT", color:"#8b1a1a"},
+  {name:"Aaron V.",    initials:"AV", color:"#2d7bc4"},
+  {name:"Caleb W.",    initials:"CW", color:"#6b8b1a"},
+  {name:"Eli X.",      initials:"EX", color:"#8b3d1a"},
+  {name:"Finn Y.",     initials:"FY", color:"#1a5c8b"},
+  {name:"Gavin Z.",    initials:"GZ", color:"#7b1a5c"},
+  {name:"Hunter A.",   initials:"HA", color:"#1a8b3d"},
+  {name:"Ivan B.",     initials:"IB", color:"#5c1a8b"},
+  {name:"Jordan C.",   initials:"JC", color:"#8b6b1a"},
+  {name:"Kevin D.",    initials:"KD", color:"#1a6b8b"},
+  {name:"Liam E.",     initials:"LE", color:"#8b1a4a"},
+];
+
+/* ════════════════════════════════════════════════════════
+   RENDER CATALOG
+════════════════════════════════════════════════════════ */
+let currentProduct = null;
+let timerInterval  = null;
+
+function renderCatalog(){
+  const grid = document.getElementById('catalog-grid');
+  grid.innerHTML = PRODUCTS.map((p,i)=>`
+    <div class="product-card" onclick="openDetail(${i})">
+      ${p.badge ? `<div class="card-badge badge-${p.badge}">${p.badge.toUpperCase()}</div>` : ''}
+      ${p.image && p.image !== 'YOUR_IMAGE_URL_'+(i+1)
+        ? `<img class="card-img" src="${p.image}" alt="${p.name}" loading="lazy"/>`
+        : `<div class="card-img-placeholder">
+             <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
+               <circle cx="8.5" cy="8.5" r="1.5" stroke-width="1.5"/>
+               <path d="M21 15l-5-5L5 21" stroke-width="1.5" stroke-linecap="round"/>
+             </svg>
+             <span>Image ${i+1}</span>
+           </div>`
+      }
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-meta">
+          <div class="card-purchases">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            ${p.purchases.toLocaleString()} purchases
+          </div>
+          <div class="card-price">
+            ${p.originalPrice > p.price ? `<span class="price-old">$${p.originalPrice}</span>` : ''}
+            <span class="price-currency">USD</span>
+            <span class="price-now">$${p.price}</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-buy" onclick="event.stopPropagation();openDetailAndCheckout(${i})">
+            🛒 Buy
+          </button>
+          <a class="btn-proof" href="${p.proofLink}" target="_blank" onclick="event.stopPropagation()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+            Send Proof
+          </a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   DETAIL MODAL
+════════════════════════════════════════════════════════ */
+function openDetail(idx){
+  const p = PRODUCTS[idx];
+  currentProduct = p;
+
+  // Meta tags
+  const metas = [];
+  if(p.badge==='featured') metas.push('<span class="meta-tag red">Featured</span>');
+  if(p.badge==='hot')      metas.push('<span class="meta-tag red">🔥 Hot</span>');
+  if(p.badge==='new')      metas.push('<span class="meta-tag gold">✨ New</span>');
+  metas.push('<span class="meta-tag green">⚡ Instant Delivery</span>');
+  document.getElementById('dm-meta').innerHTML = metas.join('');
+
+  document.getElementById('dm-name').textContent = p.name;
+
+  // Timer
+  if(p.spots > 0){
+    startDetailTimer();
+  }
+
+  // Spots
+  const spotsEl = document.getElementById('dm-spots');
+  spotsEl.style.display = p.spots > 0 ? 'flex' : 'none';
+  spotsEl.textContent = `⚠ ONLY ${p.spots} SPOTS LEFT`;
+
+  // Image
+  const img = document.getElementById('dm-img');
+  img.src = p.image || '';
+  img.style.display = p.image && !p.image.startsWith('YOUR') ? 'block' : 'none';
+
+  // Includes
+  document.getElementById('dm-includes').innerHTML =
+    p.includes.map(item=>`
+      <div class="include-item">
+        <span class="check-icon">✓</span>
+        <span>${item}</span>
+      </div>
+    `).join('');
+
+  // Price
+  const save = p.originalPrice > p.price ? p.originalPrice - p.price : 0;
+  document.getElementById('dm-old-price').textContent  = save > 0 ? `$${p.originalPrice}` : '';
+  document.getElementById('dm-price').textContent      = `$${p.price}`;
+  document.getElementById('dm-save').textContent       = save > 0 ? `SAVE $${save}` : '';
+  document.getElementById('dm-save').style.display     = save > 0 ? 'inline-flex' : 'none';
+  document.getElementById('dm-pay-label').textContent  = `$${p.price}`;
+  document.getElementById('dm-proof-btn').href         = p.proofLink;
+
+  document.getElementById('detail-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openDetailAndCheckout(idx){
+  openDetail(idx);
+  setTimeout(()=> openCheckout(), 200);
+}
+
+function closeDetailModal(){
+  document.getElementById('detail-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  if(timerInterval) clearInterval(timerInterval);
+}
+
+let timerSeconds = 620;
+function startDetailTimer(){
+  if(timerInterval) clearInterval(timerInterval);
+  timerSeconds = 600 + Math.floor(Math.random()*120);
+  updateTimerDisplay();
+  timerInterval = setInterval(()=>{
+    timerSeconds--;
+    if(timerSeconds < 0) timerSeconds = 600;
+    updateTimerDisplay();
+  }, 1000);
+}
+function updateTimerDisplay(){
+  const m = Math.floor(timerSeconds/60).toString().padStart(2,'0');
+  const s = (timerSeconds%60).toString().padStart(2,'0');
+  const el = document.getElementById('dm-timer');
+  if(el) el.textContent = `${m}:${s}`;
+}
+
+/* ════════════════════════════════════════════════════════
+   BUNDLE CHECKOUT
+════════════════════════════════════════════════════════ */
+function openBundleCheckout(){
+  currentProduct = { name: "ALL CONTENT — Full Bundle" };
+  document.getElementById('co-product-name').textContent = "ALL CONTENT — Full Bundle ($150)";
+  document.getElementById('checkout-overlay').classList.add('open');
+}
+
+/* ════════════════════════════════════════════════════════
+   CHECKOUT MODAL
+════════════════════════════════════════════════════════ */
+function openCheckout(){
+  if(currentProduct){
+    document.getElementById('co-product-name').textContent = currentProduct.name;
+    const proofBtn = document.getElementById('checkout-proof-btn');
+    if(proofBtn) proofBtn.href = currentProduct.proofLink || '#';
+  }
+  document.getElementById('checkout-overlay').classList.add('open');
+}
+/* COPY ADDRESS */
+let toastTimer = null;
+function showCopyToast(label){
+  const toast = document.getElementById('copy-toast');
+  const text  = document.getElementById('copy-toast-text');
+  text.textContent = label + ' copied!';
+  toast.classList.remove('hide');
+  toast.classList.add('show');
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{
+    toast.classList.remove('show');
+    toast.classList.add('hide');
+  }, 2200);
+}
+
+function copyAddr(id, btn){
+  const el = document.getElementById(id);
+  if(!el){ console.warn('copyAddr: element not found:', id); return; }
+  const text = el.textContent.trim();
+
+  // Ripple effect on button
+  const ripple = document.createElement('span');
+  ripple.className = 'ripple-effect';
+  btn.appendChild(ripple);
+  setTimeout(()=> ripple.remove(), 600);
+
+  // Button state
+  const originalHTML = btn.innerHTML;
+  btn.innerHTML = '✓ Copied!';
+  btn.classList.add('copied');
+  setTimeout(()=>{
+    btn.innerHTML = originalHTML;
+    btn.classList.remove('copied');
+  }, 2000);
+
+  // Coin label for toast
+  const labels = {
+    'addr-btc':'Bitcoin (BTC)',
+    'addr-eth':'Ethereum (ETH)',
+    'addr-usdt':'USDT TRC-20',
+    'addr-sol':'Solana (SOL)',
+  };
+  showCopyToast(labels[id] || 'Address');
+
+  // Copy to clipboard — robust multi-method
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).catch(()=> fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text){
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  } catch(e){ console.warn('Copy fallback failed:', e); }
+}
+
+/* CLOSE MODALS ON OVERLAY CLICK */
+document.getElementById('detail-overlay').addEventListener('click',function(e){
+  if(e.target===this) closeDetailModal();
+});
+document.getElementById('checkout-overlay').addEventListener('click',function(e){
+  if(e.target===this) closeCheckout();
+});
+
+/* ════════════════════════════════════════════════════════
+   PURCHASE NOTIFICATION POPUP
+════════════════════════════════════════════════════════ */
+function showPurchaseNotif(){
+  const buyer   = BUYERS[Math.floor(Math.random()*BUYERS.length)];
+  const product = PRODUCTS[Math.floor(Math.random()*PRODUCTS.length)];
+
+  document.getElementById('notif-avatar').textContent         = buyer.initials;
+  document.getElementById('notif-avatar').style.background    = buyer.color;
+  document.getElementById('notif-buyer-name').textContent     = buyer.name;
+  document.getElementById('notif-product-name').textContent   = product.name;
+  document.getElementById('notif-price').textContent          = `$${product.price}`;
+
+  const popup = document.getElementById('notif-popup');
+  popup.classList.add('show');
+  setTimeout(()=> popup.classList.remove('show'), 4000);
+}
+
+// First popup after 3s, then every 8–12s
+setTimeout(()=>{
+  showPurchaseNotif();
+  setInterval(showPurchaseNotif, 9000);
+}, 3000);
+
+/* ════════════════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════════════════ */
+renderCatalog();
+
+function updateBundleStats(){
+  const total = PRODUCTS.reduce((sum, p) => sum + p.price, 0);
+  const savings = total - 150;
+  const pct = Math.round((savings / total) * 100);
+  document.getElementById('bundle-total-separately').textContent = '$' + total;
+  document.getElementById('bundle-saving-text').textContent = 'You save $' + savings + ' — ' + pct + '% OFF';
+}
+updateBundleStats();
+
+     function closeCheckout(){
+  document.getElementById('checkout-overlay').classList.remove('open');
+}
+</script>
+</body>
+</html>
